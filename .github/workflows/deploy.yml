@@ -1,0 +1,27 @@
+name: deploy next-demo to vercel
+on:
+  push:
+    branches: [main]
+  pull_request_target:
+    types: [opened, synchronize, reopened]
+jobs:
+  vercel:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Use Node.js
+        uses: actions/setup-node@v1
+        with:
+          node-version: "14.x"
+      - name: Install dependencies
+        run: yarn
+      - name: Deploy to Vercel Action
+        uses: BetaHuhn/deploy-to-vercel-action@v1.7.1
+        with:
+          # ini environment variables yang di setup di github repository bagian settings -> secrets -> actions
+          # ACTION INPUTS: GITHUB_SECRET
+          VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }} # INI DAPET DARI VERCEL
+          VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }} # INI DAPET DARI PAS JALANIN `npx vercel`
+          VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }} # INI DAPET DARI PAS JALANIN `npx vercel`
+          GITHUB_TOKEN: ${{ secrets.GH_PAT }} # INI DAPET DARI GITHUB -> SETTINGS -> DEVELOPER_SETTINGS -> PERSONAL_ACCESS_TOKENS
