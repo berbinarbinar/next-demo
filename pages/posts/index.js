@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { useState, useEffect } from "react";
 
 export default function Posts() {
@@ -39,9 +40,7 @@ export default function Posts() {
       .then((res) => res.json())
       .then((data) => {
         setPosts(data);
-        setTimeout(() => {
-          setLoading(false);
-        }, [3000]);
+        setLoading(false);
       });
   }, []);
 
@@ -49,7 +48,7 @@ export default function Posts() {
 
   return (
     <>
-      <h1 style={{ textAlign: "center" }}>List Comments </h1>
+      <h1 style={{ textAlign: "center" }}>List Posts </h1>
       {posts?.map((e) => (
         <div
           key={e.id}
@@ -73,6 +72,9 @@ export default function Posts() {
           >
             <h2> {e?.title}</h2>
             <h4> {e?.body}</h4>
+            <Link href={`/posts/${e?.id}`}>
+              <button>Menuju Post detail</button>
+            </Link>
           </div>
         </div>
       ))}

@@ -22,7 +22,7 @@ export default function Post() {
   return (
     <>
       <Link href="/posts">
-        <h1 style={{ textAlign: "center" }}>Back to Posts {id}</h1>
+        <h1 style={{ textAlign: "center" }}>Back to Posts</h1>
       </Link>
       <h1 style={{ textAlign: "center" }}>Post number {id}</h1>
       <div
