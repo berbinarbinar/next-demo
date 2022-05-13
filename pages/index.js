@@ -1,6 +1,7 @@
 import Head from "next/head";
 import Image from "next/image";
 import styles from "../styles/Home.module.css";
+import Link from "next/link";
 
 export default function Home() {
   return (
@@ -13,7 +14,7 @@ export default function Home() {
 
       <main className={styles.main}>
         <h1 className={styles.title}>
-          Welcome to <a href="https://nextjs.org">My Paradise</a>
+          Welcome to <a href="https://github.com/icanq">Next.JS with icanq</a>
         </h1>
 
         <p className={styles.description}>
@@ -22,22 +23,25 @@ export default function Home() {
         </p>
 
         <div className={styles.grid}>
-          <a href="https://nextjs.org/docs" className={styles.card}>
-            <h2>Documentation &rarr;</h2>
-            <p>Find in-depth information about Next.js features and API.</p>
+          <a href="/posts" className={styles.card}>
+            <h2>Posts &rarr;</h2>
+            <p>
+              Buat contoh halaman post, dimana disini kita nerapin CSR alias
+              clientside rendering.
+            </p>
           </a>
 
-          <a href="https://nextjs.org/learn" className={styles.card}>
-            <h2>Learn &rarr;</h2>
-            <p>Learn about Next.js in an interactive course with quizzes!</p>
+          <a href="/books" className={styles.card}>
+            <h2>books &rarr;</h2>
+            <p>disini kita belajar dynamic routes biasa</p>
           </a>
 
-          <a
-            href="https://github.com/vercel/next.js/tree/canary/examples"
-            className={styles.card}
-          >
-            <h2>Examples &rarr;</h2>
-            <p>Discover and deploy boilerplate example Next.js projects.</p>
+          <a href="/articles" className={styles.card}>
+            <h2>articles &rarr;</h2>
+            <p>
+              Didalam file articles ini kita belajar catchAll dynamicroutes,
+              buat ngambil params atau querystring yang ada di routes
+            </p>
           </a>
 
           <a
