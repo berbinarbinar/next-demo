@@ -23,36 +23,17 @@ export default function Home() {
         </p>
 
         <div className={styles.grid}>
-          <a href="/posts" className={styles.card}>
-            <h2>Posts &rarr;</h2>
-            <p>
-              Buat contoh halaman post, dimana disini kita nerapin CSR alias
-              clientside rendering.
-            </p>
-          </a>
+          <Link href="/posts">
+            <h2 className={styles.card}>Posts &rarr;</h2>
+          </Link>
 
-          <a href="/books" className={styles.card}>
-            <h2>books &rarr;</h2>
-            <p>disini kita belajar dynamic routes biasa</p>
-          </a>
+          <Link href="/books">
+            <h2 className={styles.card}>books &rarr;</h2>
+          </Link>
 
-          <a href="/articles" className={styles.card}>
-            <h2>articles &rarr;</h2>
-            <p>
-              Didalam file articles ini kita belajar catchAll dynamicroutes,
-              buat ngambil params atau querystring yang ada di routes
-            </p>
-          </a>
-
-          <a
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className={styles.card}
-          >
-            <h2>Deploy &rarr;</h2>
-            <p>
-              Instantly deploy your Next.js site to a public URL with Vercel.
-            </p>
-          </a>
+          <Link href="/articles">
+            <h2 className={styles.card}>articles &rarr;</h2>
+          </Link>
         </div>
       </main>
 
