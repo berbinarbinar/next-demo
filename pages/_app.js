@@ -1,7 +1,12 @@
-import '../styles/globals.css'
+import { BookProvider } from "../context/BookContext";
+import "../styles/globals.css";
 
 function MyApp({ Component, pageProps }) {
-  return <Component {...pageProps} />
+  return (
+    <BookProvider>
+      <Component {...pageProps} />
+    </BookProvider>
+  );
 }
 
-export default MyApp
+export default MyApp;

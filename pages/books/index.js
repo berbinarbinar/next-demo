@@ -1,6 +1,8 @@
 import Link from "next/link";
+import { useBooks } from "../../context/BookContext";
 
 export default function Books() {
+  const { books, setBooks } = useBooks();
   return (
     <>
       <div style={{ display: "flex" }}>
@@ -11,6 +13,7 @@ export default function Books() {
           This is inside /books
         </h1>
       </div>
+      <h4 style={{ flexDirection: "column" }}>{books}</h4>
     </>
   );
 }
